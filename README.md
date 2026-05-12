@@ -1,4 +1,4 @@
-# Grupo Y
+# Trabajo Práctico Cursada - Base de Datos II - Grupo Y
 
 **Integrantes:**
 - Rodrigo Gabriel Funes
@@ -22,37 +22,6 @@ Trabajo Práctico Integrador de la materia Bases de Datos II (UNLa). El objetivo
 
 **Dominio del problema:** una cadena de farmacias que necesita informatizar su operatoria (ventas, productos, clientes, empleados y sucursales).
 
----
-
-## Stack tecnológico
-
-| Herramienta | Versión |
-|---|---|
-| Java | 25 |
-| Spring Boot | 3.4.5 |
-| MongoDB | 7 |
-| Maven | 3.9.15 |
-
----
-
-## Estructura del proyecto
-
-```
-tp-bd2/
-├── docker-compose.yml              # MongoDB 7
-├── pom.xml                         # Spring Boot + MongoDB
-├── mvnw                            # Maven Wrapper
-├── src/main/java/com/grupoy/tpbd2/
-│   ├── TpBd2Application.java       # Entry point
-│   └── config/
-│       └── MongoConfig.java        # Config MongoDB (auditing)
-├── src/main/resources/
-│   └── application.yml             # Conexión a MongoDB
-└── src/test/...
-```
-
----
-
 ## Cómo levantar el proyecto
 
 ```bash
@@ -63,7 +32,7 @@ podman-compose up -d
 ./mvnw spring-boot:run
 ```
 
-La API arranca en `http://localhost:8080`.
+La API arranca en `http://localhost:8080`
 
 ---
 
@@ -157,26 +126,4 @@ erDiagram
         decimal subtotal
     }
 ```
-
----
-
-## Reportes requeridos (fe de erratas)
-
-1. Cantidad de ventas total cadena + agrupadas por sucursal entre fechas.
-2. Cantidad de ventas agrupadas por obra social / privados entre fechas.
-3. Cobranza total cadena + agrupada por sucursal entre fechas.
-4. Cantidad de ventas agrupadas por tipo de producto (farmacia / perfumería) entre fechas.
-5. Ranking de monto vendido por producto y sucursal.
-6. Ranking de cantidad vendida por producto y sucursal.
-7. Ranking de compras por cliente (total cadena).
-8. Ranking de compras por cliente y sucursal.
-
----
-
-## Entregas
-
-| Entrega | Contenido |
-|---|---|
-| 01 | ERD |
-| 02 | POJOs, instanciación, serialización a JSON |
-| 03 | Carga en MongoDB + consultas 1 y 4 |
+![ERD](docs/ERD%20BBDD2.jpg)

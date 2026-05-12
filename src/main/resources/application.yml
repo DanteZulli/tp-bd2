@@ -1,16 +1,14 @@
 spring:
   application:
     name: tp-bd2
-
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: tp_bd2
-      authentication-database: admin
-      username: admin
-      password: admin123
-      auto-index-creation: true
+  
+  mongodb:
+    host: localhost
+    port: 27017
+    database: tp_bd2
+    authentication-database: admin
+    username: admin
+    password: admin123
 
 server:
   port: 8080
