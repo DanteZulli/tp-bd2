@@ -29,7 +29,7 @@ Trabajo Práctico Integrador de la materia Bases de Datos II (UNLa). El objetivo
 Levanta MongoDB + la API automáticamente:
 
 ```bash
-podman-compose up -d --build
+docker compose up -d --build
 ```
 
 La API arranca en `http://localhost:8080`
@@ -37,7 +37,7 @@ La API arranca en `http://localhost:8080`
 Para detener todo:
 
 ```bash
-podman-compose down
+docker compose down
 ```
 
 ### Opción 2: API + MongoDB en local
