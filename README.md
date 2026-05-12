@@ -24,15 +24,29 @@ Trabajo Práctico Integrador de la materia Bases de Datos II (UNLa). El objetivo
 
 ## Cómo levantar el proyecto
 
-```bash
-# 1. Iniciar MongoDB
-podman-compose up -d
+### Opción 1: Docker
 
-# 2. Ejecutar la API
-./mvnw spring-boot:run
+Levanta MongoDB + la API automáticamente:
+
+```bash
+podman-compose up -d --build
 ```
 
 La API arranca en `http://localhost:8080`
+
+Para detener todo:
+
+```bash
+podman-compose down
+```
+
+### Opción 2: API + MongoDB en local
+
+```bash
+# 1. Asegurate de tener MongoDB corriendo en localhost:27017
+# 2. Ejecutar la API
+./mvnw spring-boot:run
+```
 
 ---
 
