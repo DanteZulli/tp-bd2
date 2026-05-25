@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Venta {
 
-    private String idVenta;
+    private Integer idVenta;
     private String nroTicket;
     private Date fecha;
     private Double totalVenta;

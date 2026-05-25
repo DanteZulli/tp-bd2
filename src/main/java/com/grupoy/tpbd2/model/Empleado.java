@@ -14,10 +14,7 @@ public class Empleado {
     private String nombre;
     private String dni;
     private String cuil;
-    private String calle;
-    private Integer numero;
-    private String localidad;
-    private String provincia;
+    private Domicilio domicilio;
     private ObraSocial obraSocial;
     private boolean esEncargado;
 }

@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sucursal {
+public class Domicilio {
 
-    private Integer idSucursal;
-    private String puntoVenta;
-    private Domicilio domicilio;
-    private Empleado encargado;
+    private String calle;
+    private Integer numero;
+    private String localidad;
+    private String provincia;
 }

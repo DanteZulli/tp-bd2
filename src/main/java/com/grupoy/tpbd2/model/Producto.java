@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Producto {
 
-    private Integer codigo;
+    private Integer idProducto;
+    private String codigoNum;
     private String descripcion;
+    private String tipo;
     private String laboratorio;
-    private boolean esMedicamento;
-    private Double precio;
+    private Double precioActual;
 }

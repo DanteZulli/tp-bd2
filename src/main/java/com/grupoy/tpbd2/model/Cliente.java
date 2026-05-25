@@ -13,10 +13,7 @@ public class Cliente {
     private String apellido;
     private String nombre;
     private String dni;
-    private String calle;
-    private Integer numero;
-    private String localidad;
-    private String provincia;
+    private Domicilio domicilio;
     private boolean esPrivado;
     private ObraSocial obraSocial;
     private String numeroAfiliado;
