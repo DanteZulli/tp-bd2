@@ -1,5 +1,7 @@
 package com.grupoy.tpbd2.model;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,6 @@ public class DetalleVenta {
 
     private Producto producto;
     private Integer cantidad;
-    private Double precioUnitarioHistorico;
-    private Double subtotal;
+    private BigDecimal precioUnitarioHistorico;
+    private BigDecimal subtotal;
 }

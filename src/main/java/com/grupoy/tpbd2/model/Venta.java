@@ -1,6 +1,7 @@
 package com.grupoy.tpbd2.model;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -14,8 +15,8 @@ public class Venta {
 
     private Integer idVenta;
     private String nroTicket;
-    private Date fecha;
-    private Double totalVenta;
+    private LocalDate fecha;
+    private BigDecimal totalVenta;
     private String formaPago;
     private Cliente cliente;
     private Empleado vendedor;

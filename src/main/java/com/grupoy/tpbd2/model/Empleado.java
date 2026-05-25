@@ -16,5 +16,6 @@ public class Empleado {
     private String cuil;
     private Domicilio domicilio;
     private ObraSocial obraSocial;
+    private String numeroAfiliado;
     private boolean esEncargado;
 }
