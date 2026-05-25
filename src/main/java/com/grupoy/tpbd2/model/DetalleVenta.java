@@ -1,52 +1,16 @@
 package com.grupoy.tpbd2.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DetalleVenta {
-    
-    private Producto producto; 
+
+    private Producto producto;
     private Integer cantidad;
     private Double precioUnitarioHistorico;
     private Double subtotal;
-
-    public DetalleVenta() {
-    }
-
-    public DetalleVenta(Producto producto, Integer cantidad, Double precioUnitarioHistorico, Double subtotal) {
-        this.producto = producto;
-        this.cantidad = cantidad;
-        this.precioUnitarioHistorico = precioUnitarioHistorico;
-        this.subtotal = subtotal;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public Double getPrecioUnitarioHistorico() {
-        return precioUnitarioHistorico;
-    }
-
-    public void setPrecioUnitarioHistorico(Double precioUnitarioHistorico) {
-        this.precioUnitarioHistorico = precioUnitarioHistorico;
-    }
-
-    public Double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(Double subtotal) {
-        this.subtotal = subtotal;
-    }
-
 }
