@@ -8,8 +8,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
       MONGO_INITDB_DATABASE: tp_bd2
-    volumes:
-      - mongodb_data:/data/db
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh --quiet
       interval: 10s
@@ -21,11 +19,11 @@ services:
     container_name: tp-bd2-app
     ports:
       - "8080:8080"
+    volumes:
+      - ./data:/app/data
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
       mongodb:
         condition: service_healthy
 
-volumes:
-  mongodb_data:

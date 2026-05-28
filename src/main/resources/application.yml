@@ -1,6 +1,9 @@
 spring:
   application:
     name: tp-bd2
+  output:
+    ansi:
+      enabled: ALWAYS
   
   mongodb:
     host: localhost
@@ -9,6 +12,9 @@ spring:
     authentication-database: admin
     username: admin
     password: admin123
+
+app:
+  json-output: /app/data/ventas.json
 
 server:
   port: 8080
