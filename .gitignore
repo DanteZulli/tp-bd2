@@ -181,6 +181,7 @@ build/
 
 # Generated JSON output
 /data/*.json
+/output/*.json
 
 ### Some additional ignores (sort later)
 *.DS_Store
