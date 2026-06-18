@@ -1,7 +1,6 @@
 spring:
   application:
     name: tp-bd2
-  # Configuración para el autoconfigurador de Spring Data
   mongodb:
     host: localhost
     port: 27017
@@ -12,7 +11,7 @@ spring:
     uri: mongodb://admin:admin123@localhost:27017/tp_bd2?authSource=admin
 
 app:
-  json-output: ./output/ventas.json
+  json-output: /app/data/ventas.json
 
 server:
   port: 8080

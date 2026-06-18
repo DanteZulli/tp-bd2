@@ -20,7 +20,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./output:/app/output
+      - ./data:/app/data
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
