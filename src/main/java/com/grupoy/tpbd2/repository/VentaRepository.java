@@ -37,3 +37,5 @@ public interface VentaRepository extends MongoRepository<Venta, Integer> {
     })
     List<ReporteVentas> reporteCantidadVentasPorTipoProducto(LocalDate inicio, LocalDate fin);
 }
+    
+}
