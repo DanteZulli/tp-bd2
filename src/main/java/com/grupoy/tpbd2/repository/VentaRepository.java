@@ -7,4 +7,5 @@ import com.grupoy.tpbd2.model.Venta;
 
 @Repository
 public interface VentaRepository extends MongoRepository<Venta, Integer> {
+    
 }

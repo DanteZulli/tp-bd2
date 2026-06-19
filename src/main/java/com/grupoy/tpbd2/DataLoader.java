@@ -59,6 +59,32 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("=== Carga completada: " + count + " ventas en la coleccion 'ventas' ===");
 
         serializarJson(ventas);
+
+        // Consulta 1: Recuperar todas las ventas desde la BD para listar montos altos (Mayores a $4000)
+        List<Venta> todasLasVentas = ventaRepository.findAll();
+        long ventasGrandes = todasLasVentas.stream()
+                .filter(v -> v.getTotalVenta().compareTo(new BigDecimal("4000.00")) > 0)
+                .count();
+        System.out.println("1. Cantidad de ventas mayores a $4000.00: " + ventasGrandes);
+
+        // Consulta 2: Filtrar y contar transacciones según su medio de pago (Efectivo)
+        long ventasEfectivo = todasLasVentas.stream()
+                .filter(v -> "efectivo".equalsIgnoreCase(v.getFormaPago()))
+                .count();
+        System.out.println("2. Cantidad de transacciones abonadas en efectivo: " + ventasEfectivo);
+
+        // Consulta 3: Contar transacciones con tarjeta (debito o tarjeta)
+        long ventasTarjeta = todasLasVentas.stream()
+                .filter(v -> "tarjeta".equalsIgnoreCase(v.getFormaPago()) || "debito".equalsIgnoreCase(v.getFormaPago()))
+                .count();
+        System.out.println("3. Cantidad de transacciones abonadas con tarjeta/debito: " + ventasTarjeta);
+
+        // Consulta 4: Contar ventas realizadas en la Sucursal 1 (Punto de venta "0001")
+        long ventasSucursal1 = todasLasVentas.stream()
+                .filter(v -> "0001".equals(v.getSucursal().getPuntoVenta()))
+                .count();
+        System.out.println("4. Cantidad de ventas realizadas en la Sucursal 1 (Punto de Venta 0001): " + ventasSucursal1);
+        
     }
 
     private List<Venta> generarVentas() {
