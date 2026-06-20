@@ -2,9 +2,6 @@ package com.grupoy.tpbd2;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +9,9 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.grupoy.tpbd2.model.Cliente;
 import com.grupoy.tpbd2.model.DetalleVenta;
 import com.grupoy.tpbd2.model.Domicilio;
@@ -25,11 +21,13 @@ import com.grupoy.tpbd2.model.Producto;
 import com.grupoy.tpbd2.model.Sucursal;
 import com.grupoy.tpbd2.model.Venta;
 import com.grupoy.tpbd2.repository.VentaRepository;
+import com.grupoy.tpbd2.util.JsonUtil;
 
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
+@Order(1)
 public class DataLoader implements CommandLineRunner {
 
     private final VentaRepository ventaRepository;
@@ -58,7 +56,8 @@ public class DataLoader implements CommandLineRunner {
         long count = ventaRepository.count();
         System.out.println("=== Carga completada: " + count + " ventas en la coleccion 'ventas' ===");
 
-        serializarJson(ventas);
+        JsonUtil.serializarJson(ventas, jsonOutputPath);
+        
     }
 
     private List<Venta> generarVentas() {
@@ -181,21 +180,6 @@ public class DataLoader implements CommandLineRunner {
                 new Sucursal(1, "0001", DOM_SUC1, empleadosPorSucursal.get(0).get(0)),
                 new Sucursal(2, "0002", DOM_SUC2, empleadosPorSucursal.get(1).get(0)),
                 new Sucursal(3, "0003", DOM_SUC3, empleadosPorSucursal.get(2).get(0)));
-    }
-
-    private void serializarJson(List<Venta> ventas) {
-        try {
-            Files.createDirectories(Paths.get(jsonOutputPath).getParent());
-
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.enable(SerializationFeature.INDENT_OUTPUT);
-            mapper.findAndRegisterModules();
-
-            mapper.writeValue(Path.of(jsonOutputPath).toFile(), ventas);
-            System.out.println("=== JSON generado: " + jsonOutputPath + " ===");
-        } catch (Exception e) {
-            System.err.println("Error al serializar JSON: " + e.getMessage());
-        }
     }
 
     private enum FormaPago {
