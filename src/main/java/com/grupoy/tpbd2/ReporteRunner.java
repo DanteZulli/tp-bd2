@@ -34,11 +34,11 @@ public class ReporteRunner implements CommandLineRunner {
 
         JsonUtil.serializarJson(
             ventaRepository.reporteCantidadVentasCadena(inicio, fin),
-            outputDir.resolve("reporte1_cantidad_ventas_cadena.json").toString()
+            outputDir.resolve("reporte1a_cantidad_ventas_cadena.json").toString()
         );
         JsonUtil.serializarJson(
             ventaRepository.reporteCantidadVentasPorSucursal(inicio, fin),
-            outputDir.resolve("reporte1_cantidad_ventas_sucursal.json").toString()
+            outputDir.resolve("reporte1b_cantidad_ventas_sucursal.json").toString()
         );
         JsonUtil.serializarJson(
             ventaRepository.reporteVentasPorObraSocial(inicio, fin),
@@ -46,11 +46,11 @@ public class ReporteRunner implements CommandLineRunner {
         );
         JsonUtil.serializarJson(
             ventaRepository.reporteCobranzaCadena(inicio, fin),
-            outputDir.resolve("reporte3_cobranza_cadena.json").toString()
+            outputDir.resolve("reporte3a_cobranza_cadena.json").toString()
         );
         JsonUtil.serializarJson(
             ventaRepository.reporteCobranzaPorSucursal(inicio, fin),
-            outputDir.resolve("reporte3_cobranza_sucursal.json").toString()
+            outputDir.resolve("reporte3b_cobranza_sucursal.json").toString()
         );
         JsonUtil.serializarJson(
             ventaRepository.reporteCantidadVentasPorTipoProducto(inicio, fin),
