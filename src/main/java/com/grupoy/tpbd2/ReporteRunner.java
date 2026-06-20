@@ -41,8 +41,36 @@ public class ReporteRunner implements CommandLineRunner {
             outputDir.resolve("reporte1_cantidad_ventas_sucursal.json").toString()
         );
         JsonUtil.serializarJson(
+            ventaRepository.reporteVentasPorObraSocial(inicio, fin),
+            outputDir.resolve("reporte2_ventas_obra_social.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteCobranzaCadena(inicio, fin),
+            outputDir.resolve("reporte3_cobranza_cadena.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteCobranzaPorSucursal(inicio, fin),
+            outputDir.resolve("reporte3_cobranza_sucursal.json").toString()
+        );
+        JsonUtil.serializarJson(
             ventaRepository.reporteCantidadVentasPorTipoProducto(inicio, fin),
             outputDir.resolve("reporte4_cantidad_ventas_productos.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteRankingMontoProductoSucursal(inicio, fin),
+            outputDir.resolve("reporte5_ranking_monto_producto_sucursal.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteRankingCantidadProductoSucursal(inicio, fin),
+            outputDir.resolve("reporte6_ranking_cantidad_producto_sucursal.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteRankingComprasCliente(inicio, fin),
+            outputDir.resolve("reporte7_ranking_compras_cliente.json").toString()
+        );
+        JsonUtil.serializarJson(
+            ventaRepository.reporteRankingComprasClienteSucursal(inicio, fin),
+            outputDir.resolve("reporte8_ranking_compras_cliente_sucursal.json").toString()
         );
 
         System.out.println("=== Reportes generados en: " + outputDir + " ===");
